@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f8fb">
+  <meta name="description" content="รายงานแนวโน้มค่าเฉลี่ย PM2.5 ล่วงหน้า 24 ชั่วโมง บริเวณโรงเรียนปทุมวิไล พร้อมคำแนะนำการดูแลสุขภาพ">
+  <title>อากาศดีไหม — PM2.5 โรงเรียนปทุมวิไล</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="อากาศดีไหม หน้าแรก">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 44 44" fill="none">
+            <path d="M22 35.2c-7.8 0-13.7-4.1-15.4-10.7 6.5-.8 11.7 1.7 15.4 8.4 3.7-6.7 8.9-9.2 15.4-8.4C35.7 31.1 29.8 35.2 22 35.2Z" fill="currentColor" opacity=".92"/>
+            <path d="M22 31.8c-1.2-8.6.6-16 7.5-22.3 4.5 8.7 2.4 16.2-7.5 22.3Z" fill="currentColor" opacity=".67"/>
+            <path d="M22 31.8c1.2-8.6-.6-16-7.5-22.3-4.5 8.7-2.4 16.2 7.5 22.3Z" fill="currentColor" opacity=".45"/>
+            <path d="M9.1 20.3c2.8-2.7 6.4-3.8 10.4-3.1M34.9 20.3c-2.8-2.7-6.4-3.8-10.4-3.1" stroke="white" stroke-width="1.4" stroke-linecap="round" opacity=".8"/>
+          </svg>
+        </span>
+        <span class="brand-copy"><strong>อากาศดีไหม</strong><small>Pathumwilai Air Watch</small></span>
+      </a>
+      <div class="location-chip">
+        <span class="location-dot"></span>
+        <span>โรงเรียนปทุมวิไล · ปทุมธานี</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> ห้องเรียนอากาศดี · เช็กก่อนออกไปทำกิจกรรม</p>
+          <h1 id="hero-title">อากาศวันนี้<br><span>เป็นอย่างไรบ้าง?</span></h1>
+          <p class="hero-intro">ดูแนวโน้มฝุ่น PM2.5 รอบโรงเรียน พร้อมคำแนะนำสั้น ๆ เพื่อให้ทุกคนวางแผนการเรียนและกิจกรรมกลางแจ้งได้อย่างสบายใจ</p>
+          <div class="forecast-note">
+            <span class="note-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.36 6.36-1.42-1.42M7.06 7.06 5.64 5.64m12.72 0-1.42 1.42M7.06 16.94l-1.42 1.42" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.7"/></svg>
+            </span>
+            <span><strong>พยากรณ์ล่วงหน้า 24 ชั่วโมง</strong><small>ค่าเฉลี่ย PM2.5 จากแบบจำลองคุณภาพอากาศ</small></span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="sun-orbit orbit-one"></div>
+          <div class="sun-orbit orbit-two"></div>
+          <div class="glow glow-main"></div>
+          <div class="glow glow-small"></div>
+          <div class="dust-field" aria-hidden="true">
+            <i style="--x:9%;--y:18%;--d:7px;--delay:-2s;--duration:7s"></i>
+            <i style="--x:19%;--y:68%;--d:5px;--delay:-4s;--duration:8s"></i>
+            <i style="--x:27%;--y:31%;--d:8px;--delay:-1s;--duration:9s"></i>
+            <i style="--x:38%;--y:83%;--d:4px;--delay:-6s;--duration:7s"></i>
+            <i style="--x:45%;--y:14%;--d:5px;--delay:-3s;--duration:10s"></i>
+            <i style="--x:54%;--y:72%;--d:7px;--delay:-5s;--duration:8s"></i>
+            <i style="--x:63%;--y:24%;--d:4px;--delay:-1s;--duration:6s"></i>
+            <i style="--x:72%;--y:84%;--d:8px;--delay:-7s;--duration:9s"></i>
+            <i style="--x:83%;--y:41%;--d:5px;--delay:-2s;--duration:7s"></i>
+            <i style="--x:91%;--y:18%;--d:4px;--delay:-4s;--duration:8s"></i>
+            <i style="--x:12%;--y:43%;--d:3px;--delay:-5s;--duration:6s"></i>
+            <i style="--x:78%;--y:61%;--d:3px;--delay:-2s;--duration:10s"></i>
+          </div>
+          <div class="visual-caption"><span class="caption-spark">✳</span> อากาศที่ดี เริ่มจากการรู้ทัน</div>
+          <div class="forecast-card" id="forecast-card">
+            <div class="forecast-card-top">
+              <span class="live-label"><span class="live-pulse"></span> รายงานคุณภาพอากาศ</span>
+              <span class="card-time">24H</span>
+            </div>
+            <div class="locked-reading" id="locked-reading">
+              <div class="lock-orb" aria-hidden="true">
+                <div class="lock-ring ring-back"></div>
+                <div class="lock-ring ring-front"></div>
+                <span class="lock-center">
+                  <svg viewBox="0 0 24 24" fill="none"><rect x="5.5" y="10" width="13" height="10" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 10V7.5a3.5 3.5 0 1 1 7 0V10m-3.5 4v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                </span>
+                <span class="orb-spark spark-a"></span><span class="orb-spark spark-b"></span><span class="orb-spark spark-c"></span>
+              </div>
+              <p class="lock-title">ค่าพยากรณ์พร้อมแล้ว</p>
+              <p class="lock-subtitle">กดปุ่มด้านล่างเพื่อเปิดดูข้อมูล</p>
+            </div>
+            <div class="reading-preview" id="reading-preview" hidden aria-live="polite">
+              <div class="reading-topline"><span>ค่าเฉลี่ย 24 ชั่วโมง</span><span class="reading-trend" id="trend-pill"></span></div>
+              <div class="reading-value"><span id="pm-value">—</span><small>µg/m³</small></div>
+              <div class="reading-status"><span id="status-dot" class="status-dot"></span><span id="status-label">—</span></div>
+              <div class="mini-scale"><span class="mini-scale-fill" id="mini-scale-fill"></span></div>
+              <p class="reading-time" id="reading-time">อัปเดต —</p>
+            </div>
+            <button class="reveal-button" id="reveal-button" type="button">
+              <span class="button-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14m0-14 5 5m-5-5L7 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span id="button-label">ดูค่าพยากรณ์ 24 ชม.</span>
+              <span class="button-arrow" aria-hidden="true">↗</span>
+            </button>
+            <p class="card-footnote"><span>i</span> ตัวเลขจะปรากฏหลังจากคุณกดดู</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="report-section" id="report-section" hidden aria-labelledby="report-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-line"></span> รายงานรอบโรงเรียน</p>
+            <h2 id="report-title">แนวโน้มฝุ่น <span>24 ชั่วโมงถัดไป</span></h2>
+            <p class="section-subtitle" id="report-subtitle">ค่าเฉลี่ยตามช่วงเวลาพยากรณ์ · โรงเรียนปทุมวิไล</p>
+          </div>
+          <div class="report-badge" id="report-badge"><span class="status-dot"></span><span id="report-badge-label">—</span></div>
+        </div>
+
+        <div class="report-grid">
+          <article class="chart-card">
+            <div class="card-heading">
+              <div><span class="card-kicker">FORECAST TREND</span><h3>คาดการณ์รายช่วงเวลา</h3></div>
+              <span class="chart-unit">PM2.5 · µg/m³</span>
+            </div>
+            <div class="chart-area">
+              <div class="chart-y-labels" aria-hidden="true"><span id="y-top">—</span><span id="y-mid">—</span><span>0</span></div>
+              <div class="chart-main">
+                <div class="chart-gridlines" aria-hidden="true"><span></span><span></span><span></span></div>
+                <div class="bars" id="forecast-bars" role="img" aria-label="กราฟแนวโน้ม PM2.5 ราย 3 ชั่วโมง"></div>
+                <div class="chart-x-labels" id="chart-x-labels" aria-hidden="true"></div>
+              </div>
+            </div>
+            <div class="chart-legend"><span><i class="legend-dot" id="legend-dot"></i><span id="legend-text">ค่า PM2.5</span></span><span>เวลาในประเทศไทย</span></div>
+          </article>
+
+          <article class="advice-card">
+            <div class="advice-heading">
+              <span class="advice-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 3.5 20 7v5.1c0 4.3-3.1 7.1-8 8.9-4.9-1.8-8-4.6-8-8.9V7l8-3.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m8.5 12.3 2.2 2.2 4.8-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <div><span class="card-kicker">TAKE CARE</span><h3>วันนี้ควรทำอย่างไร?</h3></div>
+            </div>
+            <p class="advice-summary" id="advice-summary">—</p>
+            <ul class="advice-list" id="advice-list"></ul>
+            <div class="care-note"><span class="care-note-icon">♥</span><span>เด็ก ผู้สูงอายุ หญิงตั้งครรภ์ และผู้มีโรคประจำตัว ควรสังเกตอาการเป็นพิเศษ หากหายใจลำบากหรือแน่นหน้าอก ให้ขอคำแนะนำจากบุคลากรทางการแพทย์</span></div>
+          </article>
+        </div>
+
+        <div class="data-note">
+          <span class="data-note-mark" aria-hidden="true">↗</span>
+          <p>พยากรณ์จากแบบจำลอง CAMS Global ผ่าน Open-Meteo (ความละเอียดประมาณ 45 กม.) อาจแตกต่างจากค่าตรวจวัดจริงในบริเวณโรงเรียน <a href="https://open-meteo.com/en/docs/air-quality-api" target="_blank" rel="noopener noreferrer">รายละเอียดแหล่งข้อมูล</a></p>
+        </div>
+      </section>
+
+      <section class="how-section" aria-label="วิธีใช้รายงาน">
+        <div class="how-icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none"><path d="M16 4.5v4m0 15v4m11.5-11.5h-4m-15 0h-4m19.13 8.13-2.83-2.83M9.2 9.2 6.37 6.37m19.26 0L22.8 9.2M9.2 22.8l-2.83 2.83" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="16" cy="16" r="5.2" stroke="currentColor" stroke-width="1.7"/></svg>
+        </div>
+        <div class="how-copy"><strong>เช็กก่อนออกไปเล่น</strong><span>ค่าพยากรณ์ช่วยวางแผนได้ แต่อากาศจริงเปลี่ยนแปลงตลอดเวลา ควรสังเกตอาการและติดตามประกาศของโรงเรียนด้วย</span></div>
+        <a href="https://air4thai.pcd.go.th/" target="_blank" rel="noopener noreferrer" class="air4thai-link">ดูสถานการณ์ Air4Thai <span aria-hidden="true">↗</span></a>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span class="footer-brand"><span class="footer-dot"></span> อากาศดีไหม · โรงเรียนปทุมวิไล</span>
+      <span>ขับเคลื่อนด้วย <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a> และ <a href="https://atmosphere.copernicus.eu/" target="_blank" rel="noopener noreferrer">CAMS</a></span>
+      <span>ข้อมูลเพื่อการวางแผนเบื้องต้น</span>
+    </footer>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
